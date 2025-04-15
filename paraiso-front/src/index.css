@@ -1,0 +1,30 @@
+:root {
+    --color-turquesa: #48D1CC;
+    --color-azul-marino: #003153;
+    --color-marron: #996515;
+    --color-beige: #F5F5DC;
+  }
+  
+  /* Sobrescribir el botón primario */
+  .btn-primary {
+    background-color: var(--color-turquesa);
+    border-color: var(--color-turquesa);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-azul-marino);
+    border-color: var(--color-azul-marino);
+  }
+  
+  /* Sobrescribir el fondo de los contenedores */
+  .bg-custom {
+    background-color: var(--color-beige);
+  }
+  
+  /* Cambiar color de texto */
+  .text-custom {
+    color: var(--color-marron);
+  }
+  
+  /* Otras personalizaciones pueden ir aquí */
+  

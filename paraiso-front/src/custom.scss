@@ -1,0 +1,18 @@
+// Definir la paleta de colores personalizada
+$primary: #48D1CC;  // Turquesa
+$secondary: #003153; // Azul marino
+$success: #996515;   // Marrón
+$background: #F5F5DC; // Beige claro
+
+// Sobrescribir colores predeterminados de Bootstrap
+$btn-primary-bg: $primary;
+$btn-primary-border: $primary;
+$btn-primary-hover-bg: darken($primary, 10%);
+$btn-primary-hover-border: darken($primary, 10%);
+
+// Personalización de los fondos
+$body-bg: $background;
+$navbar-bg: $secondary;
+
+@import "bootstrap/scss/bootstrap";
+

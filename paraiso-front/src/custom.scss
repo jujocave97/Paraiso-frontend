@@ -1,5 +1,5 @@
 // Definir la paleta de colores personalizada
-$primary: #48D1CC;  // Turquesa
+$primary: #40d9c6;  // Turquesa
 $secondary: #003153; // Azul marino
 $success: #996515;   // Marrón
 $background: #F5F5DC; // Beige claro
@@ -10,9 +10,38 @@ $btn-primary-border: $primary;
 $btn-primary-hover-bg: darken($primary, 10%);
 $btn-primary-hover-border: darken($primary, 10%);
 
+@font-face {
+    font-family: 'Oswald';
+    src: url('./assets/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Oswald';
+  }
+
+  h1, h2, nav, footer {
+    font-family: 'Oswald';
+  }
+  
+  
+
 // Personalización de los fondos
 $body-bg: $background;
-$navbar-bg: $secondary;
+$navbar-bg: $primary;
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+  
+
+.bg-turquesa {
+    background-color: #40d9c6 !important;
+    color: white;
+  }
+  
 
 @import "bootstrap/scss/bootstrap";
 

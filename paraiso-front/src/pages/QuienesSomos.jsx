@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Home() {
+function Tartas() {
   return (
     <div className="d-flex flex-column min-vh-100">
     {/* NAV */}
@@ -16,13 +16,13 @@ function Home() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto text-center">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Inicio</Link>
+                <Link className="nav-link" to="/">Inicio</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/tartas">Nuestras Tartas</Link>
+                <Link className="nav-link" to="/tartas">Nuestras Tartas</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/quienes-somos">Quiénes somos</Link>
+                <Link className="nav-link" to="/quienes-somos">Quiénes somos</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Encuéntranos</a> 
@@ -35,11 +35,6 @@ function Home() {
       </div>
     </nav>
 
-    {/* HEADER */}
-    <header className="bg-turquesa text-white text-center py-5">
-      <img src="./../../imgs/paraiso-logo-wide.png" alt="paraiso-logo" />
-      <p className="lead">Sin tartas no hay paraíso.</p>
-    </header>
 
     {/* CONTENIDO */}
     <div className="container flex-grow-1 my-4">
@@ -48,10 +43,10 @@ function Home() {
 
     {/* FOOTER */}
     <footer className="bg-turquesa text-white text-center py-3">
-      <small>&copy; 2025 Paraíso. Todos los derechos reservados.</small>
+      <small>&copy; 2025 Paraíso de Tartas. Todos los derechos reservados.</small>
     </footer>
   </div>
   );
 }
 
-export default Home;
+export default Tartas;

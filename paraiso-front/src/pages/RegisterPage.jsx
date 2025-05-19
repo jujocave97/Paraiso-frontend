@@ -1,7 +1,8 @@
 // src/pages/RegisterPage.js
 import React from 'react';
 import Header from '../components/Header';
-import RegisterForm from '../components/RegisterForm';
+import RegisterForm from '../components/RegisterForm.jsx';
+import Footer from '../components/Footer';
 
 const RegisterPage = () => (
   <div className="d-flex flex-column min-vh-100">

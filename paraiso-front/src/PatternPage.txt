@@ -14,3 +14,10 @@
       <AdminPanel />
     </PrivateRoute>
   }/>
+
+  {/* ✅ RUTA PRIVADA (usuario autenticado) */}
+        <Route path="/perfil" element={
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        }/>

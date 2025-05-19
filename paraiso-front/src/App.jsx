@@ -6,7 +6,6 @@ import Tartas from './pages/Tartas';
 import QuienesSomos from './pages/QuienesSomos';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
   return (
@@ -18,12 +17,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />        
         <Route path="/register" element={<RegisterPage />} />   
 
-        {/* ✅ RUTA PRIVADA (usuario autenticado) */}
-        <Route path="/perfil" element={
-          <PrivateRoute>
-            <UserProfile />
-          </PrivateRoute>
-        }/>
+        
 
       </Routes>
     </Router>

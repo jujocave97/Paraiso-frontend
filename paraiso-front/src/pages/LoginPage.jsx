@@ -1,7 +1,8 @@
 // src/pages/LoginPage.js
 import React from 'react';
 import Header from '../components/Header';
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../components/LoginForm.jsx';
+import Footer from '../components/Footer';
 
 const LoginPage = () => (
   <div className="d-flex flex-column min-vh-100">

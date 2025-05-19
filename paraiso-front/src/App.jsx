@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
 import Tartas from './pages/Tartas';
 import QuienesSomos from './pages/QuienesSomos';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
   return (
@@ -12,6 +15,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tartas" element={<Tartas />} />
         <Route path="/quienes-somos" element={<QuienesSomos />} />
+        <Route path="/login" element={<LoginPage />} />        
+        <Route path="/register" element={<RegisterPage />} />   
+
+        {/* ✅ RUTA PRIVADA (usuario autenticado) */}
+        <Route path="/perfil" element={
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        }/>
+
       </Routes>
     </Router>
   );

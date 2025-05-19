@@ -1,0 +1,16 @@
+<div className="d-flex flex-column min-vh-100">
+  <Header />
+  
+  {/* contenido principal */}
+  <div className="container flex-grow-1 my-4"> ... </div>
+  
+  <Footer />
+</div>
+
+
+{/* ✅ RUTA SOLO ADMIN */}
+  <Route path="/admin" element={
+    <PrivateRoute roles={['ADMIN']}>
+      <AdminPanel />
+    </PrivateRoute>
+  }/>

@@ -45,7 +45,7 @@ const Header = () => {
             ) : (
               <>
                 <li className="nav-item">
-                  <span className="nav-link disabled">Hola, {auth.email}</span>
+                  <Link className="nav-link" to="/perfil">{auth.email}</Link>
                 </li>
                 <li className="nav-item">
                   <button className="btn btn-link nav-link" onClick={logout}>Cerrar sesión</button>

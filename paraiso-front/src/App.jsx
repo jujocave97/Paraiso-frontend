@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import UserProfile from './pages/UserProfile';
 import PrivateRoute from './routes/PrivateRoutes';
+import ReservaPage from './pages/ReservaPage';
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
             <UserProfile />
           </PrivateRoute>
         } />
-        
+        <Route path="/reservar" element={
+          <PrivateRoute roles={['USUARIO']}>
+            <ReservaPage />
+          </PrivateRoute>
+        } />
 
       </Routes>
     </Router>

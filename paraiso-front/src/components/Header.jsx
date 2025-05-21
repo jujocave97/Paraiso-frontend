@@ -32,6 +32,13 @@ const Header = () => {
               <a className="nav-link" href="#">Contacto</a>
             </li>
 
+            {auth?.rol === 'USUARIO' && (
+              <li className="nav-item">
+                <Link className="nav-link" to="/reservar">Reservar Tarta</Link>
+              </li>
+            )}
+
+
             {/* Login/Registro o Cerrar sesión */}
             {!auth ? (
               <>

@@ -6,9 +6,9 @@ export const reservarTarta = async (reservaDTO) => {
   return res.data;
 };
 
-// ✅ GET /reservas/{id} — reservas de un usuario (autenticado)
-export const obtenerReservasDeUsuario = async (email) => {
-  const res = await axiosInstance.get(`/reservas/${email}`);
+// ✅ GET /reservas/ — reservas de un usuario (autenticado)
+export const obtenerReservasDeUsuario = async () => {
+  const res = await axiosInstance.get(`/reservas/mis-reservas`);
   return res.data;
 };
 

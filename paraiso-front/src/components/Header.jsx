@@ -38,6 +38,8 @@ const Header = () => {
               </li>
             )}
 
+        
+
 
             {/* Login/Registro o Cerrar sesión */}
             {!auth ? (

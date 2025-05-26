@@ -3,6 +3,7 @@ import axiosInstance from '../api/axiosInstance';
 import { reservarTarta } from '../api/reservas';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ListaReservasUsuario from '../components/ListaReservasUsuario';
 
 const ReservaPage = () => {
   const [tartas, setTartas] = useState([]);
@@ -96,6 +97,7 @@ const ReservaPage = () => {
           </div>
         </form>
       </div>
+      <ListaReservasUsuario />
       <Footer />
     </div>
   );

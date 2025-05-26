@@ -38,7 +38,20 @@ const Header = () => {
               </li>
             )}
 
-        
+            {auth?.rol === 'ADMIN' && (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/reservas">Gestionar Reservas</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/usuarios">Gestionar Usuarios</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin/tartas">Gestionar Tartas</Link>
+                </li>
+              </>
+            )}
+
 
 
             {/* Login/Registro o Cerrar sesión */}

@@ -29,3 +29,8 @@ export const eliminarReserva = async (reservaID) => {
   const res = await axiosInstance.delete(`/reservas/${reservaID}`);
   return res.data;
 };
+
+export const eliminarReservaRolUsario = async (reservaID) => {
+  const res = await axiosInstance.delete(`/reservas/eliminarReserva/${reservaID}`);
+  return res.data;
+};

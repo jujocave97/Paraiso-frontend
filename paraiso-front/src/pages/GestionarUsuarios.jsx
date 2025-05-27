@@ -145,19 +145,7 @@ const GestionarUsuarios = () => {
                       )}
                     </td>
                     <td>
-                      {editandoEmail === usuario.email ? (
-                        <select
-                          name="rol"
-                          value={datosEditados.rol || ''}
-                          onChange={manejarCambioInput}
-                          className="form-select"
-                        >
-                          <option value="USER">USER</option>
-                          <option value="ADMIN">ADMIN</option>
-                        </select>
-                      ) : (
-                        usuario.rol
-                      )}
+                      {usuario.rol}
                     </td>
                     <td>
                       {editandoEmail === usuario.email ? (

@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setAuth(null);
     localStorage.clear();
-    window.location.href = '/login'; // redirige automáticamente
+    window.location.href = '/login?expirada=true';; // redirige automáticamente
   };
 
   // asignamos logout a variable externa

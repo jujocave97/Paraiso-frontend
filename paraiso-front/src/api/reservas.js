@@ -34,3 +34,10 @@ export const eliminarReservaRolUsario = async (reservaID) => {
   const res = await axiosInstance.delete(`/reservas/eliminarReserva/${reservaID}`);
   return res.data;
 };
+
+
+// ✅ GET /reservas/usuario/{nombre} — solo ADMIN, busca reservas por nombre de usuario
+export const obtenerReservasPorNombreUsuario = async (email) => {
+  const res = await axiosInstance.get(`/reservas/${encodeURIComponent(email)}`);
+  return res.data;
+};

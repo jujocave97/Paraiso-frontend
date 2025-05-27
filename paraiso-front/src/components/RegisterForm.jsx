@@ -3,6 +3,7 @@ import { register as registerApi } from '../api/auth';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     nombre: '',
     apellidos: '',
@@ -24,7 +25,10 @@ const RegisterForm = () => {
     try {
       await registerApi(form);
       setMensaje('🎉 Registro exitoso. Ahora puedes iniciar sesión.');
-      navigate('/login'); // ✅ redirige al login
+      setTimeout(() => {
+        navigate('/login');
+      }, 1500);
+
     } catch (err) {
       setError('❌ Hubo un error al registrar. Verifica los datos.');
     }
@@ -79,7 +83,7 @@ const RegisterForm = () => {
             name="telefono"
             type="tel"
             className="form-control"
-            placeholder="666-123-456"
+            placeholder="666123456"
             value={form.telefono}
             onChange={handleChange}
             required

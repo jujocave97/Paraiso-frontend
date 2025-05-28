@@ -7,6 +7,7 @@ const GestionarTartas = () => {
   const [tartas, setTartas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [mensaje, setMensaje] = useState('');
 
   const [form, setForm] = useState({
     id: null,
@@ -14,7 +15,6 @@ const GestionarTartas = () => {
     descripcion: '',
   });
 
-  const [mensaje, setMensaje] = useState('');
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const GestionarTartas = () => {
       const data = await obtenerTartas();
       setTartas(data);
     } catch (err) {
-      setError(err.message);
+      setError('Error al cargar las tartas');
     } finally {
       setLoading(false);
     }
@@ -67,7 +67,7 @@ const GestionarTartas = () => {
       setIsEditing(false);
       fetchTartas();
     } catch (err) {
-      setError(err.message);
+      setError('Error al guardar la tarta');
     }
   };
 
@@ -92,7 +92,7 @@ const GestionarTartas = () => {
       setMensaje('Tarta eliminada correctamente');
       fetchTartas();
     } catch (err) {
-      setError(err.message);
+      setError('Error al eliminar la tarta');
     }
   };
 
@@ -100,7 +100,9 @@ const GestionarTartas = () => {
     <div className="d-flex flex-column min-vh-100">
       <Header />
       <div className="container my-5">
-        <h2 className="text-center mb-4" style={{ color: '#40d9c6' }}>Administración de Tartas</h2>
+        <h2 className="text-center mb-4" style={{ color: '#40d9c6' }}>
+          Administración de Tartas
+        </h2>
 
         {mensaje && <div className="alert alert-success">{mensaje}</div>}
         {error && <div className="alert alert-danger">{error}</div>}
@@ -154,37 +156,68 @@ const GestionarTartas = () => {
         ) : tartas.length === 0 ? (
           <p>No hay tartas disponibles.</p>
         ) : (
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
+          <>
+            {/* 🖥️ Tabla visible en md+ */}
+            <div className="d-none d-md-block table-responsive">
+              <table className="table table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tartas.map((tarta) => (
+                    <tr key={tarta.id}>
+                      <td>{tarta.nombre}</td>
+                      <td>{tarta.descripcion}</td>
+                      <td>
+                        <button
+                          className="btn btn-sm btn-warning me-2"
+                          onClick={() => handleEdit(tarta)}
+                        >
+                          Editar
+                        </button>
+                        <button
+                          className="btn btn-sm btn-danger"
+                          onClick={() => handleDelete(tarta.id)}
+                        >
+                          Eliminar
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* 📱 Tarjetas para móviles */}
+            <div className="d-md-none">
               {tartas.map((tarta) => (
-                <tr key={tarta.id}>
-                  <td>{tarta.nombre}</td>
-                  <td>{tarta.descripcion}</td>
-                  <td>
-                    <button
-                      className="btn btn-sm btn-warning me-2"
-                      onClick={() => handleEdit(tarta)}
-                    >
-                      Editar
-                    </button>
-                    <button
-                      className="btn btn-sm btn-danger"
-                      onClick={() => handleDelete(tarta.id)}
-                    >
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
+                <div className="card mb-3" key={tarta.id}>
+                  <div className="card-body">
+                    <h5 className="card-title">{tarta.nombre}</h5>
+                    <p className="card-text">{tarta.descripcion || <em>Sin descripción</em>}</p>
+                    <div className="d-flex gap-2">
+                      <button
+                        className="btn btn-sm btn-warning w-50"
+                        onClick={() => handleEdit(tarta)}
+                      >
+                        Editar
+                      </button>
+                      <button
+                        className="btn btn-sm btn-danger w-50"
+                        onClick={() => handleDelete(tarta.id)}
+                      >
+                        Eliminar
+                      </button>
+                    </div>
+                  </div>
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </>
         )}
       </div>
       <Footer />

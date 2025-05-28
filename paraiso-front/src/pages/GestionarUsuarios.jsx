@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
 import {
   obtenerTodosLosUsuarios,
   actualizarUsuario,
@@ -83,103 +82,94 @@ const GestionarUsuarios = () => {
         {error && <div className="alert alert-danger text-center">{error}</div>}
 
         {!cargando && usuarios.length === 0 && (
-          <div className="alert alert-info text-center">
-            No hay usuarios registrados.
-          </div>
+          <div className="alert alert-info text-center">No hay usuarios registrados.</div>
         )}
 
-        {!cargando && usuarios.length > 0 && (
-          <div className="table-responsive">
-            <table className="table table-bordered table-hover">
-              <thead className="table-light">
-                <tr>
-                  <th>Email</th>
-                  <th>Nombre</th>
-                  <th>Apellidos</th>
-                  <th>Teléfono</th>
-                  <th>Rol</th>
-                  <th>Acciones</th>
+        {/* 🟦 Tabla en pantallas grandes */}
+        <div className="d-none d-md-block table-responsive">
+          <table className="table table-bordered table-hover align-middle text-center">
+            <thead className="table-light">
+              <tr>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {usuarios.map((usuario) => (
+                <tr key={usuario.email}>
+                  <td className="text-break">{usuario.email}</td>
+                  <td>
+                    {editandoEmail === usuario.email ? (
+                      <input type="text" name="nombre" value={datosEditados.nombre || ''} onChange={manejarCambioInput} className="form-control form-control-sm" />
+                    ) : usuario.nombre}
+                  </td>
+                  <td>
+                    {editandoEmail === usuario.email ? (
+                      <input type="text" name="apellidos" value={datosEditados.apellidos || ''} onChange={manejarCambioInput} className="form-control form-control-sm" />
+                    ) : usuario.apellidos}
+                  </td>
+                  <td>
+                    {editandoEmail === usuario.email ? (
+                      <input type="tel" name="telefono" value={datosEditados.telefono || ''} onChange={manejarCambioInput} className="form-control form-control-sm" />
+                    ) : usuario.telefono}
+                  </td>
+                  <td>{usuario.rol}</td>
+                  <td className="d-flex flex-wrap justify-content-center gap-1">
+                    {editandoEmail === usuario.email ? (
+                      <>
+                        <button className="btn btn-success btn-sm" onClick={manejarGuardar}>Guardar</button>
+                        <button className="btn btn-secondary btn-sm" onClick={manejarCancelarEdicion}>Cancelar</button>
+                      </>
+                    ) : (
+                      <>
+                        <button className="btn btn-primary btn-sm" onClick={() => manejarEditarClick(usuario.email)}>Editar</button>
+                        <button className="btn btn-danger btn-sm" onClick={() => manejarEliminar(usuario.email)}>Eliminar</button>
+                      </>
+                    )}
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {usuarios.map((usuario) => (
-                  <tr key={usuario.email}>
-                    <td>{usuario.email}</td>
-                    <td>
-                      {editandoEmail === usuario.email ? (
-                        <input
-                          type="text"
-                          name="nombre"
-                          value={datosEditados.nombre || ''}
-                          onChange={manejarCambioInput}
-                          className="form-control"
-                        />
-                      ) : (
-                        usuario.nombre
-                      )}
-                    </td>
-                    <td>
-                      {editandoEmail === usuario.email ? (
-                        <input
-                          type="text"
-                          name="apellidos"
-                          value={datosEditados.apellidos || ''}
-                          onChange={manejarCambioInput}
-                          className="form-control"
-                        />
-                      ) : (
-                        usuario.apellidos
-                      )}
-                    </td>
-                    <td>
-                      {editandoEmail === usuario.email ? (
-                        <input
-                          type="tel"
-                          name="telefono"
-                          value={datosEditados.telefono || ''}
-                          onChange={manejarCambioInput}
-                          className="form-control"
-                        />
-                      ) : (
-                        usuario.telefono
-                      )}
-                    </td>
-                    <td>
-                      {usuario.rol}
-                    </td>
-                    <td>
-                      {editandoEmail === usuario.email ? (
-                        <>
-                          <button className="btn btn-success btn-sm me-2" onClick={manejarGuardar}>
-                            Guardar
-                          </button>
-                          <button className="btn btn-secondary btn-sm" onClick={manejarCancelarEdicion}>
-                            Cancelar
-                          </button>
-                        </>
-                      ) : (
-                        <>
-                          <button
-                            className="btn btn-primary btn-sm me-2"
-                            onClick={() => manejarEditarClick(usuario.email)}
-                          >
-                            Editar
-                          </button>
-                          <button
-                            className="btn btn-danger btn-sm"
-                            onClick={() => manejarEliminar(usuario.email)}
-                          >
-                            Eliminar
-                          </button>
-                        </>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* 🟩 Tarjetas en móviles */}
+        <div className="d-md-none">
+          {usuarios.map((usuario) => (
+            <div className="card mb-3" key={usuario.email}>
+              <div className="card-body">
+                <h5 className="card-title text-break">{usuario.email}</h5>
+                <p className="mb-1"><strong>Nombre:</strong> {editandoEmail === usuario.email ? (
+                  <input type="text" name="nombre" value={datosEditados.nombre || ''} onChange={manejarCambioInput} className="form-control form-control-sm" />
+                ) : usuario.nombre}</p>
+                <p className="mb-1"><strong>Apellidos:</strong> {editandoEmail === usuario.email ? (
+                  <input type="text" name="apellidos" value={datosEditados.apellidos || ''} onChange={manejarCambioInput} className="form-control form-control-sm" />
+                ) : usuario.apellidos}</p>
+                <p className="mb-1"><strong>Teléfono:</strong> {editandoEmail === usuario.email ? (
+                  <input type="tel" name="telefono" value={datosEditados.telefono || ''} onChange={manejarCambioInput} className="form-control form-control-sm" />
+                ) : usuario.telefono}</p>
+                <p className="mb-2"><strong>Rol:</strong> {usuario.rol}</p>
+                <div className="d-flex flex-wrap gap-2">
+                  {editandoEmail === usuario.email ? (
+                    <>
+                      <button className="btn btn-success btn-sm" onClick={manejarGuardar}>Guardar</button>
+                      <button className="btn btn-secondary btn-sm" onClick={manejarCancelarEdicion}>Cancelar</button>
+                    </>
+                  ) : (
+                    <>
+                      <button className="btn btn-primary btn-sm" onClick={() => manejarEditarClick(usuario.email)}>Editar</button>
+                      <button className="btn btn-danger btn-sm" onClick={() => manejarEliminar(usuario.email)}>Eliminar</button>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <Footer />
     </div>

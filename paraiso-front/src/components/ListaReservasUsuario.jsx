@@ -3,7 +3,7 @@ import { obtenerReservasDeUsuario } from '../api/reservas';
 import { eliminarReservaRolUsario } from '../api/reservas';
 
 
-const ListaReservasUsuario = () => {
+const ListaReservasUsuario = ({actualizarTrigger}) => {
   const [reservas, setReservas] = useState([]);
   const [error, setError] = useState('');
 
@@ -19,7 +19,7 @@ const ListaReservasUsuario = () => {
     };
 
     cargarReservas();
-  }, []);
+  }, [actualizarTrigger]);
 
   if (error)
     return (

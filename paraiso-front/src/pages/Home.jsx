@@ -8,7 +8,7 @@ function Home() {
       <Header />
 
       <header className="bg-turquesa text-white text-center py-5">
-        <img src="./../../imgs/paraiso-logo-wide.png" alt="paraiso-logo" />
+        <img src="./../../imgs/paraiso-logo-wide.png" alt="paraiso-logo" className='img-fluid' />
         <p className="lead">Sin tartas no hay paraíso.</p>
       </header>
 

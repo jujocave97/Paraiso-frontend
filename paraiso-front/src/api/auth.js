@@ -17,12 +17,14 @@ export const register = async (userData) => {
 
 // Enviar email para recuperación
 export const solicitarRecuperacion = (email) => {
-  return axiosInstance.post('/auth/forgot-password', { email });
+  return AUTH_API.post('/recover', null, {
+    params: { email },
+  });
 };
 
 // Establecer nueva contraseña
 export const resetearContrasena = (token, nuevaPassword) => {
-  return axiosInstance.post('/auth/reset-password', {
+  return AUTH_API.post('/reset-password',null, {
     token,
     nuevaPassword
   });

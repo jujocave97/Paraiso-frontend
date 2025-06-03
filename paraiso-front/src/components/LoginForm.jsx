@@ -125,6 +125,10 @@ const LoginForm = () => {
             Entrar
           </button>
         </div>
+        <div className="text-center mt-3">
+          <a href="/forgot-password">¿Olvidaste tu contraseña?</a>
+        </div>
+
       </form>
     </div>
   );

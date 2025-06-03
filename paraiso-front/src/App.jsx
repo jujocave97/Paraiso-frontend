@@ -12,6 +12,8 @@ import GestionarReservas from './pages/GestionarReservas'; // ðŸ‘ˆ importa la pÃ
 import GestionarTartas from './pages/GestionarTartas'; 
 import GestionarUsuarios from './pages/GestionarUsuarios'; 
 import PrivateRoute from './routes/PrivateRoutes';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/quienes-somos" element={<QuienesSomos />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
 
         <Route
           path="/perfil"

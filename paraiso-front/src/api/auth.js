@@ -15,3 +15,15 @@ export const register = async (userData) => {
   return res.data;
 };
 
+// Enviar email para recuperación
+export const solicitarRecuperacion = (email) => {
+  return axiosInstance.post('/auth/forgot-password', { email });
+};
+
+// Establecer nueva contraseña
+export const resetearContrasena = (token, nuevaPassword) => {
+  return axiosInstance.post('/auth/reset-password', {
+    token,
+    nuevaPassword
+  });
+};

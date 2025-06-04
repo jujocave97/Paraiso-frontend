@@ -24,8 +24,8 @@ export const solicitarRecuperacion = (email) => {
 
 // Establecer nueva contraseña
 export const resetearContrasena = (token, nuevaPassword) => {
-  return AUTH_API.post('/reset-password',null, {
+  return axios.post('http://localhost:8080/api/auth/reset-password', {
     token,
-    nuevaPassword
+    nuevaPassword,
   });
 };

@@ -27,4 +27,9 @@
   }
   
   /* Otras personalizaciones pueden ir aquí */
-  
+.navbar .nav-link {
+  color: white !important;
+  font-size: 1.1rem;     /* Tamaño más grande */
+  font-weight: bold;     /* Texto en negrita */
+}
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import InstagramFeed from '../components/InstagramFeed';
 import { Link } from 'react-router-dom';
 
 
@@ -36,7 +37,7 @@ function Home() {
           </div>
           <div className="col-md-4 mb-4">
             <div className="card">
-              <img src="/imgs/pistacho1.png" className="card-img-top" alt="Tarta de filipinos y chocolate blanco" />
+              <img src="/imgs/tartaQueso1.png" className="card-img-top" alt="Tarta de filipinos y chocolate blanco" />
               <div className="card-body">
                 <h5 className="card-title">Filipinos y chocolate blanco</h5>
               </div>
@@ -54,6 +55,10 @@ function Home() {
           }}>
             🍰 Ver todos los productos
           </Link>
+        </div>
+        <div className="container flex-grow-1 my-4">
+          {/* Aquí puedes poner contenido extra si quieres */}
+          <InstagramFeed />
         </div>
       </div>
   

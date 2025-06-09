@@ -28,3 +28,19 @@
   
   /* Otras personalizaciones pueden ir aquí */
   
+
+/* Header*/
+.navbar .nav-link {
+  color: var(--color-beige)  !important;
+  font-size: 1.1rem;     /* Tamaño más grande */     /* Texto en negrita */
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-marron) !important; /* Blanco más suave o puedes usar otro tono claro */
+}
+
+
+/* slider focus*/
+.slick-slide:focus {
+  outline: none;
+}

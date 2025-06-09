@@ -18,6 +18,12 @@ function Tartas() {
     { nombre: 'Galleta de Avena', imagen: '/imgs/tartaQueso1.png' },
   ];
 
+  const helados = [
+    { nombre: 'Helado de Mantequilla', imagen: '/imgs/tartaQueso1.png' },
+    { nombre: 'Helado de Chocolate', imagen: '/imgs/tartaQueso1.png' },
+    { nombre: 'Helado de Avena', imagen: '/imgs/tartaQueso1.png' },
+  ];
+
   const settings = {
     dots: true,
     infinite: true,
@@ -64,6 +70,34 @@ function Tartas() {
         <section style={{ marginTop: '5rem' }}>
           <h2 style={{ textAlign: 'center', color: '#40d9c6', fontWeight: '700', marginBottom: '2rem' }}>
             Galletas
+          </h2>
+          <Slider {...settings}>
+            {galletas.map(({ nombre, imagen }, index) => (
+              <div key={index} style={{ outline: 'none' }}>
+                <img
+                  src={imagen}
+                  alt={nombre}
+                  style={{
+                    maxHeight: '400px',
+                    maxWidth: '100%',
+                    margin: '0 auto',
+                    display: 'block',
+                    borderRadius: '10px',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                    objectFit: 'contain',
+                  }}
+                />
+                <h5 style={{ marginTop: '1rem', fontWeight: '600', color: '#003153', textAlign: 'center' }}>
+                  {nombre}
+                </h5>
+              </div>
+            ))}
+          </Slider>
+        </section>
+
+        <section style={{ marginTop: '5rem' }}>
+          <h2 style={{ textAlign: 'center', color: '#40d9c6', fontWeight: '700', marginBottom: '2rem' }}>
+            Helados
           </h2>
           <Slider {...settings}>
             {galletas.map(({ nombre, imagen }, index) => (

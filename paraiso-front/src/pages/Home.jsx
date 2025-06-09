@@ -17,7 +17,9 @@ function Home() {
 
       <div className="container flex-grow-1 my-4">
         {/* Aquí va tu contenido de la tienda */}
-        <h2 className="text-center mb-4">Nuestras tartas más populares</h2>
+        <h2 style={{ textAlign: 'center', color: '#40d9c6', fontWeight: '700', marginBottom: '2rem' }}>
+            Nuestras tartas más populares
+          </h2>
         <div className="row">
           <div className="col-md-4 mb-4">
             <div className="card">

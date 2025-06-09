@@ -4,7 +4,9 @@ import React from 'react';
 const InstagramFeed = () => {
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4">Síguenos en Instagram</h2>
+      <h2 style={{ textAlign: 'center', color: '#40d9c6', fontWeight: '700', marginBottom: '2rem' }}>
+            Síguenos en Instagram
+        </h2>
       <div className="d-flex justify-content-center">
         <iframe
           title="Instagram Feed"

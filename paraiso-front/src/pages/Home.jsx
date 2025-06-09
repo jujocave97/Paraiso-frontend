@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
   return (
@@ -14,7 +16,47 @@ function Home() {
 
       <div className="container flex-grow-1 my-4">
         {/* Aquí va tu contenido de la tienda */}
+        <h2 className="text-center mb-4">Nuestras tartas más populares</h2>
+        <div className="row">
+          <div className="col-md-4 mb-4">
+            <div className="card">
+              <img src="/imgs/pistacho1.png" className="card-img-top" alt="Tarta de Happy hippo" />
+              <div className="card-body">
+                <h5 className="card-title">Happy Hippo</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="card">
+              <img src="/imgs/pistacho1.png" className="card-img-top" alt="Tarta de Pistacho" />
+              <div className="card-body">
+                <h5 className="card-title">Pistacho</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="card">
+              <img src="/imgs/pistacho1.png" className="card-img-top" alt="Tarta de filipinos y chocolate blanco" />
+              <div className="card-body">
+                <h5 className="card-title">Filipinos y chocolate blanco</h5>
+              </div>
+            </div>
+          </div>
+          {/* Más tartas aquí */}
+        </div>
+        <div className="text-center mt-5">
+          <Link to="/tartas" className="btn btn-lg px-5 py-3 rounded-pill shadow-sm" style={{
+            backgroundColor: '#40d9c6',
+            borderColor: '#40d9c6',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: '1.25rem'
+          }}>
+            🍰 Ver todos los productos
+          </Link>
+        </div>
       </div>
+  
 
       <Footer />
     </div>

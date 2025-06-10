@@ -33,7 +33,6 @@ const ListaReservasUsuario = ({actualizarTrigger}) => {
   const handleEliminar = async (reservaID) => {
       try {
         await eliminarReservaRolUsario(reservaID);
-        // Opcional: vuelve a cargar las reservas tras eliminar
         setReservas(reservas.filter((reserva) => reserva.id !== reservaID));
       } catch (error) {
         console.error('❌ Error al eliminar la reserva:', error);

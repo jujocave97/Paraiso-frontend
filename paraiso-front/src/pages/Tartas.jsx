@@ -9,7 +9,10 @@ function Tartas() {
   const tartas = [
     { nombre: 'Tarta de Pistacho', imagen: '/imgs/pistacho1.png' },
     { nombre: 'Tarta de Queso con Filipinos', imagen: '/imgs/tartaQueso1.png' },
-    { nombre: 'Tarta Happy Hippo', imagen: '/imgs/happyhippo1.png' },
+    { nombre: 'Tarta de Happy Hippo', imagen: '/imgs/happyhipo.jpg' },
+    { nombre: 'Tarta de Nestle Jungly', imagen: '/imgs/jungly.jpg' },
+    { nombre: 'Tarta de Lotus', imagen: '/imgs/lotus.jpg' },
+    { nombre: 'Tarta de Lotus', imagen: '/imgs/oreo.jpg' },
   ];
 
   const galletas = [

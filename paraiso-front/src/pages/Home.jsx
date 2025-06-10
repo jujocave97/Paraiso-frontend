@@ -19,7 +19,7 @@ function Home() {
         {/* Aquí va tu contenido de la tienda */}
         <h2 style={{ textAlign: 'center', color: '#40d9c6', fontWeight: '700', marginBottom: '2rem' }}>
             Nuestras tartas más populares
-          </h2>
+        </h2>
         <div className="row">
           <div className="col-md-4 mb-4">
             <div className="card">
@@ -59,7 +59,6 @@ function Home() {
           </Link>
         </div>
         <div className="container flex-grow-1 my-4">
-          {/* Aquí puedes poner contenido extra si quieres */}
           <InstagramFeed />
         </div>
       </div>

@@ -14,6 +14,7 @@ import GestionarUsuarios from './pages/GestionarUsuarios';
 import PrivateRoute from './routes/PrivateRoutes';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
+import Mas from './pages/Mas';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tartas" element={<Tartas />} />
-        <Route path="/quienes-somos" element={<QuienesSomos />} />
+        <Route path="/quienessomos" element={<QuienesSomos />} />
+        <Route path="/mas" element={<Mas />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />

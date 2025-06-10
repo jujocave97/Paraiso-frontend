@@ -24,13 +24,10 @@ const Header = () => {
               <Link className="nav-link" to="/tartas">Nuestros Productos</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/quienes-somos">Quiénes somos</Link>
+              <Link className="nav-link" to="/quienessomos">Quiénes somos</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Encuéntranos</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Contacto</a>
+              <Link className="nav-link" to="/mas">Más</Link>
             </li>
 
             {auth?.rol === 'USUARIO' && (

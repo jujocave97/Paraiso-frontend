@@ -27,7 +27,7 @@ const Header = () => {
               <Link className="nav-link" to="/quienessomos">Quiénes somos</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/mas">Más</Link>
+              <Link className="nav-link" to="/mas">Contacto</Link>
             </li>
 
             {auth?.rol === 'USUARIO' && (

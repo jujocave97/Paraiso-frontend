@@ -20,7 +20,6 @@ function Mas() {
               method="POST"
               className="w-100 mx-auto"
             >
-
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">Nombre</label>
                 <input type="text" className="form-control" id="name" name="name" required />

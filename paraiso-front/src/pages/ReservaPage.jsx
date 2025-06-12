@@ -21,7 +21,7 @@ const ReservaPage = () => {
   useEffect(() => {
     const cargarTartas = async () => {
       try {
-        const res = await axiosInstance.get('/cakes/');
+        const res = await axiosInstance.get('/api/cakes/');
         setTartas(res.data);
       } catch {
         setMensaje('❌ Error al cargar las tartas.');

@@ -11,6 +11,8 @@ export const login = async (email, password) => {
   return res.data;
 };
 
+
+
 export const register = async (userData) => {
   const res = await AUTH_API.post('/register', userData);
   return res.data;
@@ -23,10 +25,11 @@ export const solicitarRecuperacion = (email) => {
   });
 };
 
-// Establecer nueva contraseña
 export const resetearContrasena = (token, nuevaPassword) => {
-  return axios.post(apiUrl+'/auth/reset-password', {
+  return axios.post(apiUrl + '/auth/reset-password', {
     token,
     nuevaPassword,
+  }, {
+    withCredentials: true,
   });
 };

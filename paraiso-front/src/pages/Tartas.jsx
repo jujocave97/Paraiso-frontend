@@ -16,15 +16,9 @@ function Tartas() {
   ];
 
   const galletas = [
-    { nombre: 'Galleta de Mantequilla', imagen: '/imgs/tartaQueso1.png' },
-    { nombre: 'Galleta de Chocolate', imagen: '/imgs/tartaQueso1.png' },
-    { nombre: 'Galleta de Avena', imagen: '/imgs/tartaQueso1.png' },
-  ];
-
-  const helados = [
-    { nombre: 'Helado de Mantequilla', imagen: '/imgs/tartaQueso1.png' },
-    { nombre: 'Helado de Chocolate', imagen: '/imgs/tartaQueso1.png' },
-    { nombre: 'Helado de Avena', imagen: '/imgs/tartaQueso1.png' },
+    { nombre: 'Galletas', imagen: '/imgs/galletaNormal.png' },
+    { nombre: 'Galletas de Chocolate', imagen: '/imgs/galletadechocolate.png' },
+    { nombre: 'Galletas de Chocolate Chips', imagen: '/imgs/galletaschips.png' },
   ];
 
   const settings = {
@@ -102,28 +96,9 @@ function Tartas() {
           <h2 style={{ textAlign: 'center', color: '#40d9c6', fontWeight: '700', marginBottom: '2rem' }}>
             Helados
           </h2>
-          <Slider {...settings}>
-            {galletas.map(({ nombre, imagen }, index) => (
-              <div key={index} style={{ outline: 'none' }}>
-                <img
-                  src={imagen}
-                  alt={nombre}
-                  style={{
-                    maxHeight: '400px',
-                    maxWidth: '100%',
-                    margin: '0 auto',
-                    display: 'block',
-                    borderRadius: '10px',
-                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                    objectFit: 'contain',
-                  }}
-                />
-                <h5 style={{ marginTop: '1rem', fontWeight: '600', color: '#003153', textAlign: 'center' }}>
-                  {nombre}
-                </h5>
-              </div>
-            ))}
-          </Slider>
+          <h3 style={{ textAlign: 'center', color: '#40d9c6', fontWeight: '700', marginBottom: '2rem' }}>
+            PROXIMAMENTE!
+          </h3>
         </section>
       </main>
 

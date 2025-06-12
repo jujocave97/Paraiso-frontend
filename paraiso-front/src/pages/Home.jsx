@@ -23,9 +23,9 @@ function Home() {
         <div className="row">
           <div className="col-md-4 mb-4">
             <div className="card">
-              <img src="/imgs/pistacho1.png" className="card-img-top" alt="Tarta de Happy hippo" />
+              <img src="/imgs/lotus1.jpg" className="card-img-top" alt="Tarta de Lotus" />
               <div className="card-body">
-                <h5 className="card-title">Happy Hippo</h5>
+                <h5 className="card-title">Galleta Lotus</h5>
               </div>
             </div>
           </div>

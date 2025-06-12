@@ -1,8 +1,9 @@
 // src/api/auth.js
 import axios from 'axios';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const AUTH_API = axios.create({
-  baseURL: 'http://localhost:8080/api/auth', // login y register no necesitan token
+  baseURL: apiUrl+'/auth', // login y register no necesitan token
 });
 
 export const login = async (email, password) => {
@@ -24,7 +25,7 @@ export const solicitarRecuperacion = (email) => {
 
 // Establecer nueva contraseña
 export const resetearContrasena = (token, nuevaPassword) => {
-  return axios.post('http://localhost:8080/api/auth/reset-password', {
+  return axios.post(apiUrl+'/auth/reset-password', {
     token,
     nuevaPassword,
   });

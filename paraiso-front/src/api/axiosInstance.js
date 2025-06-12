@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { getLogout } from '../context/AuthContext';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: apiUrl,
 });
 
 axiosInstance.interceptors.request.use((config) => {
@@ -20,8 +21,8 @@ axiosInstance.interceptors.response.use(
       const logout = getLogout();
 
       // Limpia sesión y redirige al login con notificación
-      logout(); // ✅ tu función logout
-      window.location.href = '/login?expirada=true'; // ✅ redirige con mensaje
+      logout(); 
+      window.location.href = '/login?expirada=true'; // redirige con mensaje
     }
     return Promise.reject(error);
   }

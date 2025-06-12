@@ -10,7 +10,7 @@ const InstagramFeed = () => {
       <div className="d-flex justify-content-center">
         <iframe
           title="Instagram Feed"
-          src="https://lightwidget.com/widgets/tu-widget-id.html" // Reemplaza con tu enlace
+          src="//lightwidget.com/widgets/8933db768b8b5657b8d803cd372f62a3.html" // Reemplaza con tu enlace
           width="100%"
           height="400"
           style={{ border: 'none', overflow: 'hidden' }}
